@@ -5,7 +5,7 @@ export const useGenerateStore = defineStore("generate-store", {
   state: () => ({
     error: "",
     pending: false,
-    reccords: null,
+    records: null,
     responseStatus: false,
   }),
   actions: {
@@ -15,10 +15,10 @@ export const useGenerateStore = defineStore("generate-store", {
         const res = await axios.get(
           `https://xsrr-l2ye-dpbj.f2.xano.io/api:oUvfVMO5/receive_week?start_date=${start_date}`
         );
-        this.reccords = res.data;
-        console.log(this.reccords);
+        this.records = res.data;
+        console.log(this.records);
         this.pending = false;
-        console.log(res);
+        // console.log(res);
       } catch (error) {
         this.pending = false;
         console.log(error);
