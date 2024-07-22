@@ -8,3 +8,24 @@ export function formatDate(date) {
 
   return [day, month, year].join("/") + " " + hours + ":00";
 }
+
+// third task
+
+function solution(S, C) {
+  let total_cost = 0;
+  let n = S.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    if (S[i] === S[i + 1]) {
+      if (C[i] < C[i + 1]) {
+        total_cost += C[i];
+      } else {
+        total_cost += C[i + 1];
+        C[i + 1] = C[i];
+      }
+    }
+  }
+
+  return total_cost;
+}
+console.log(solution("abdbd", [1, 2, 2, 4, 5, 6]));
