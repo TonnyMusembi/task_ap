@@ -1,5 +1,8 @@
-<script setup></script>
+<script setup>
+// import PageLoader from "./PageLoader.vue";
+</script>
 <template>
+  <!-- <PageLoader /> -->
   <div class="body">
     <div class="container flex justify-between">
       <div class="outer-centered flex items-center justify-center">
