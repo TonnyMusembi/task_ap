@@ -11,6 +11,7 @@ console.log(date);
 
 const dates = ref("2024-07-10");
 const startDate = ref(date);
+console.log(startDate.value);
 const fetch = async () => {
   await genearteRecords(dates.value);
 };
@@ -46,6 +47,7 @@ function solutions(N) {
 
     const prev1 = calculate(n - 1);
     const prev2 = calculate(n - 2);
+    
     const sumOfDigits = String(prev1 + prev2)
       .split("")
       .reduce((acc, digit) => acc + Number(digit), 0);
@@ -64,7 +66,6 @@ console.log(solutions(6));
     >
   </div>
   <router-view></router-view>
-
   <div class="max-w-7xl mx-auto bg-gray-100">
     <div class="bg-white shadow-md rounded-md p-6 mb-6">
       <h2 class="text-xs font-semibold text-center mb-4">Contact Dates</h2>
