@@ -1,5 +1,6 @@
 <script setup>
 // import PageLoader from "./PageLoader.vue";
+// import DataTable from "./DataTable.vue";
 </script>
 <template>
   <!-- <PageLoader /> -->
@@ -43,6 +44,7 @@
       </div>
     </div>
   </div>
+  <!-- <DataTable /> -->
 </template>
 <style>
 body {

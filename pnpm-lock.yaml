@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@primevue/themes':
+        specifier: ^4.0.3
+        version: 4.0.3
       axios:
         specifier: ^1.7.2
         version: 1.7.2
@@ -17,6 +20,12 @@ importers:
       pinia-plugin-persistedstate:
         specifier: ^3.2.0
         version: 3.2.1(pinia@2.1.7(vue@3.4.31))
+      primevue:
+        specifier: ^4.0.3
+        version: 4.0.3(vue@3.4.31)
+      tailwindcss-primeui:
+        specifier: ^0.3.4
+        version: 0.3.4(tailwindcss@3.4.4)
       vue:
         specifier: ^3.4.29
         version: 3.4.31
@@ -284,6 +293,28 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@primeuix/styled@0.0.5':
+    resolution: {integrity: sha512-pVoGn/uPkVm/DyF3TR3EmH/pL/dP4nR42FcYbVduFq9VfO3KVeOEqvcCULHXos66RZO9MCbCFUoLy6ctf9GUGQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primeuix/utils@0.0.5':
+    resolution: {integrity: sha512-ntUiUgtRtkF8KuaxHffzhYxQxoXk6LAPHm7CVlFjdqS8Rx8xRkLkZVyo84E+pO2hcNFkOGVP/GxHhQ2s94O8zA==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/core@4.0.3':
+    resolution: {integrity: sha512-pKdXsYHRMtJfw1tjPJ2u3bC+QLUDIftdHgR7DRfZ4ZV0/9qOGpFZIBYTv3Px+NGQnV+qAyp3Yeh/pS9UO83wHQ==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.0.0
+
+  '@primevue/icons@4.0.3':
+    resolution: {integrity: sha512-eamWkgXhAt/3nC0HJLYmkpXf6DP9QDQ/ecaqT9onNlHXHXL+QDd25OG/wKHPKB94jh3AO/9rD1aMW+YtXtkKbQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/themes@4.0.3':
+    resolution: {integrity: sha512-5Mcb8UES2wg9WtvuK/lKW61xZpkbmRGdxKBh3LfEsxx8pwRmFtRD8XCXUPzaxUv9lwVEW3F/AQ0oAyBbnXptoQ==}
+    engines: {node: '>=12.11.0'}
 
   '@rollup/pluginutils@4.2.1':
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -1042,6 +1073,10 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
+  primevue@4.0.3:
+    resolution: {integrity: sha512-f/41JMb7pMP++zKuiymXYmDMk/4oFRlJKXQzgrAy5Q3esU29hS59MBaP2CsHdPoJasQSzVAgOT+36S4/WXLajg==}
+    engines: {node: '>=12.11.0'}
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -1142,6 +1177,11 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  tailwindcss-primeui@0.3.4:
+    resolution: {integrity: sha512-5+Qfoe5Kpq2Iwrd6umBUb3rQH6b7+pL4jxJUId0Su5agUM6TwCyH5Pyl9R0y3QQB3IRuTxBNmeS11B41f+30zw==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
 
   tailwindcss@3.4.4:
     resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
@@ -1448,6 +1488,29 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@primeuix/styled@0.0.5':
+    dependencies:
+      '@primeuix/utils': 0.0.5
+
+  '@primeuix/utils@0.0.5': {}
+
+  '@primevue/core@4.0.3(vue@3.4.31)':
+    dependencies:
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      vue: 3.4.31
+
+  '@primevue/icons@4.0.3(vue@3.4.31)':
+    dependencies:
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.3(vue@3.4.31)
+    transitivePeerDependencies:
+      - vue
+
+  '@primevue/themes@4.0.3':
+    dependencies:
+      '@primeuix/styled': 0.0.5
 
   '@rollup/pluginutils@4.2.1':
     dependencies:
@@ -2177,6 +2240,15 @@ snapshots:
 
   prettier@2.8.6: {}
 
+  primevue@4.0.3(vue@3.4.31):
+    dependencies:
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.3(vue@3.4.31)
+      '@primevue/icons': 4.0.3(vue@3.4.31)
+    transitivePeerDependencies:
+      - vue
+
   proxy-from-env@1.1.0: {}
 
   punycode@2.3.1: {}
@@ -2284,6 +2356,10 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  tailwindcss-primeui@0.3.4(tailwindcss@3.4.4):
+    dependencies:
+      tailwindcss: 3.4.4
 
   tailwindcss@3.4.4:
     dependencies:

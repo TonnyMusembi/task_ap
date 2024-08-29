@@ -47,7 +47,7 @@ function solutions(N) {
 
     const prev1 = calculate(n - 1);
     const prev2 = calculate(n - 2);
-    
+
     const sumOfDigits = String(prev1 + prev2)
       .split("")
       .reduce((acc, digit) => acc + Number(digit), 0);
