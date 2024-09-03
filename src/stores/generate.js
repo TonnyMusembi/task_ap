@@ -18,7 +18,6 @@ export const useGenerateStore = defineStore("generate-store", {
         );
         this.records = res.data;
         this.responseStatus = true;
-        console.log(this.records);
         this.pending = false;
         // console.log(res);
       } catch (error) {
