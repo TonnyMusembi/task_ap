@@ -1,7 +1,4 @@
-<script setup>
-// import PageLoader from "./PageLoader.vue";
-// import DataTable from "./DataTable.vue";
-</script>
+<script setup></script>
 <template>
   <!-- <PageLoader /> -->
   <div class="body">
