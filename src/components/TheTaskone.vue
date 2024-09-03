@@ -60,12 +60,13 @@ function solutions(N) {
 console.log(solutions(6));
 </script>
 <template>
-  <div class="bg-gray-200 flex items-center justify-center">
+  <div
+    class="cursor-pointer text-lg flex space-x-2 hover:bg-white/50 hover:text-teal-50 p-1 rounded-lg"
+  >
     <RouterLink to="/tasktwo" class="text-teal-700 rounded-md">
       Click TaskTwo</RouterLink
     >
   </div>
-  <router-view></router-view>
   <div class="max-w-7xl mx-auto bg-gray-100">
     <div class="bg-white shadow-md rounded-md p-6 mb-6">
       <h2 class="text-xs font-semibold text-center mb-4">Contact Dates</h2>

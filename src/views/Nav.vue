@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 <template>
-<Router-view/>
+  <Router-view />
 </template>
