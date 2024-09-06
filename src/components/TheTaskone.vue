@@ -1,10 +1,11 @@
 <script setup>
 import { ref } from "vue";
+import PageLoader from "./PageLoader.vue";
 import { storeToRefs } from "pinia";
 import { useGenerateStore } from "../stores/generate.js";
 // import { solution } from "../src/utils/format.js";
 const { genearteRecords } = useGenerateStore();
-const { records } = storeToRefs(useGenerateStore());
+const { records, pending } = storeToRefs(useGenerateStore());
 console.log(records.value);
 const date = new Date().toLocaleDateString();
 console.log(date);
@@ -67,28 +68,35 @@ console.log(solutions(6));
       Click TaskTwo</RouterLink
     >
   </div>
-  <div class="max-w-7xl mx-auto bg-gray-100">
-    <div class="bg-white shadow-md rounded-md p-6 mb-6">
-      <h2 class="text-xs font-semibold text-center mb-4">Contact Dates</h2>
-      <div class="orbits-container">
-        <div v-for="(day, index) in records" :key="index" class="orbit-wrapper">
-          <h3 class="text-lg font-semibold text-center mb-2">
-            {{ day.contact_date }}
-          </h3>
-          <div class="orbit">
-            <div v-for="(data, id) in day.array" :key="id">
-              <div class="orbit-item" :class="`item-${id + 1}`">
-                <img
-                  :src="data.img"
-                  alt=" h-4 w-4"
-                  class="w-4 h-4 rounded-full mx-auto"
-                />
-                <div
-                  class="details p-6 bg-white rounded shadow-md hover:bg-gray-100 hover:shadow-lg hover:text-black cursor-pointer transition duration-300"
-                >
-                  <h3 class="text-xs font-semibold">{{ data.name }}</h3>
-                  <p class="text-gray-600">{{ data.position }}</p>
-                  <p class="text-gray-600">{{ data.city }}</p>
+  <PageLoader v-if="pending" />
+  <div v-else>
+    <div class="max-w-7xl mx-auto bg-gray-100">
+      <div class="bg-white shadow-md rounded-md p-6 mb-6">
+        <h2 class="text-xs font-semibold text-center mb-4">Contact Dates</h2>
+        <div class="orbits-container">
+          <div
+            v-for="(day, index) in records"
+            :key="index"
+            class="orbit-wrapper"
+          >
+            <h3 class="text-lg font-semibold text-center mb-2">
+              {{ day.contact_date }}
+            </h3>
+            <div class="orbit">
+              <div v-for="(data, id) in day.array" :key="id">
+                <div class="orbit-item" :class="`item-${id + 1}`">
+                  <img
+                    :src="data.img"
+                    alt=" h-4 w-4"
+                    class="w-4 h-4 rounded-full mx-auto"
+                  />
+                  <div
+                    class="details p-6 bg-white rounded shadow-md hover:bg-gray-100 hover:shadow-lg hover:text-black cursor-pointer transition duration-300"
+                  >
+                    <h3 class="text-xs font-semibold">{{ data.name }}</h3>
+                    <p class="text-gray-600">{{ data.position }}</p>
+                    <p class="text-gray-600">{{ data.city }}</p>
+                  </div>
                 </div>
               </div>
             </div>
