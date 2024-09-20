@@ -23,7 +23,6 @@
             :key="i"
             class="bg-white border-b divide-x p-1 hover:bg-teal-100 cursor-pointer"
           >
-            <!-- Add 7 table cells for the 7 columns -->
             <td v-for="n in 7" :key="n" class="px-4 py-4 whitespace-nowrap">
               <div class="h-4 bg-gray-300 rounded"></div>
             </td>
