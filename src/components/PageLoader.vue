@@ -1,28 +1,42 @@
 <template>
-  <div
-    class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 z-50"
-  >
-    <div class="loader">
-      <svg
-        class="animate-spin h-12 w-12 text-white"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        ></circle>
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.963 7.963 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        ></path>
-      </svg>
+  <div class="border shadow-md rounded-md w-full">
+    <header class="bg-gray-300 py-3"></header>
+    <div
+      class="overflow-scroll max-h-[40rem] relative shadow-md sm:rounded-lg border-b"
+    >
+      <table class="animate-pulse w-full text-left text-gray-500">
+        <thead>
+          <tr class="divide-x py-4 divide-gray-300">
+            <!-- Add 7 table headers for the 7 columns -->
+            <th
+              v-for="n in 7"
+              :key="n"
+              class="px-4 py-3 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
+            >
+              <div class="h-4 bg-gray-300 rounded"></div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200 border-b">
+          <tr
+            v-for="i in 20"
+            :key="i"
+            class="bg-white border-b divide-x p-1 hover:bg-teal-100 cursor-pointer"
+          >
+            <!-- Add 7 table cells for the 7 columns -->
+            <td v-for="n in 7" :key="n" class="px-4 py-4 whitespace-nowrap">
+              <div class="h-4 bg-gray-300 rounded"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <footer class="bg-white py-3">
+        <div class="animate-pulse flex items-center justify-between space-x-4">
+          <div class="h-4 w-20 bg-gray-400/60 rounded"></div>
+          <div class="h-4 w-1/2 bg-gray-400/60 rounded"></div>
+          <div class="h-4 w-20 bg-gray-400/60 rounded"></div>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
