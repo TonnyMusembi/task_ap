@@ -1,6 +1,13 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
+  <div
+    class="cursor-pointer text-lg flex space-x-2 hover:bg-white/50 hover:text-teal-50 p-1 rounded-lg"
+  >
+    <RouterLink to="/" class="text-teal-700 rounded-md">
+      <!-- <TheButton text="Click TaskTwo" button-type="button" /> -->
+      Click TaskTwo
+    </RouterLink>
+  </div>
   <!-- <PageLoader /> -->
   <div class="body">
     <div class="container flex justify-between">
