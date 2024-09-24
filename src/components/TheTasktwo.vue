@@ -5,7 +5,7 @@
   >
     <RouterLink to="/" class="text-teal-700 rounded-md">
       <!-- <TheButton text="Click TaskTwo" button-type="button" /> -->
-      Click TaskTwo
+      Click TaskOne
     </RouterLink>
   </div>
   <!-- <PageLoader /> -->
@@ -53,7 +53,7 @@
 </template>
 <style>
 body {
-  background: #3f4040;
+  background: white;
   width: 100%;
   margin: 0;
 }
