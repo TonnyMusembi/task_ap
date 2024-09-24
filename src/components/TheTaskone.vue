@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import PageLoader from "./PageLoader.vue";
 import { storeToRefs } from "pinia";
+// import TheButton from "./TheButton.vue";
 import { useGenerateStore } from "../stores/generate.js";
 // import { solution } from "../src/utils/format.js";
 const { genearteRecords } = useGenerateStore();
@@ -65,8 +66,9 @@ console.log(solutions(6));
     class="cursor-pointer text-lg flex space-x-2 hover:bg-white/50 hover:text-teal-50 p-1 rounded-lg"
   >
     <RouterLink to="/tasktwo" class="text-teal-700 rounded-md">
-      Click TaskTwo</RouterLink
-    >
+      <!-- <TheButton text="Click TaskTwo" button-type="button" /> -->
+      Click TaskTwo
+    </RouterLink>
   </div>
   <PageLoader v-if="pending" />
   <div v-else>
