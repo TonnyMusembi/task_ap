@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Nav from "@/views/Nav.vue";
 import Tasktwo from "@/views/Tasktwo.vue";
 import Taskone from "@/views/Taskone.vue";
+import Sidebar from "@/views/Sidebar.vue";
 
 const routes = [
   {
@@ -10,6 +11,7 @@ const routes = [
     children: [
       { path: "/", name: "taskone", component: Taskone },
       { path: "/tasktwo", name: "tasktwo", component: Tasktwo },
+      { path: "/sidebar", name: "sidebar", component: Sidebar },
     ],
   },
 
