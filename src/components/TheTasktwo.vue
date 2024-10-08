@@ -12,7 +12,9 @@
   <div class="body">
     <div class="container flex justify-between">
       <div class="outer-centered flex items-center justify-center">
-        <div class="inner flex items-center justify-center text-center">
+        <div
+          class="inner flex items-center justify-center text-center text-gray-700"
+        >
           `outer-centered inner` elements (shown as red square boxes) should be
           horizontally and vertically centered inside the parent `outer` (shown
           as a white box). Their content (this text) should be also horizontally
@@ -20,7 +22,9 @@
         </div>
       </div>
       <div class="outer-centered flex items-center justify-center">
-        <div class="inner flex items-center justify-center text-center">
+        <div
+          class="inner flex items-center justify-center text-center text-gray-700"
+        >
           `outer-centered inner` elements (shown as red square boxes) should be
           horizontally and vertically centered inside the parent `outer` (shown
           as a white box). Their content (this text) should be also horizontally
