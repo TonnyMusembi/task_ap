@@ -1,4 +1,45 @@
-<script setup></script>
+<script setup>
+import { ref, onBeforeUnmount } from "vue";
+
+const message = ref("");
+const messages = ref("");
+
+const socket = ref(null);
+
+const initializeWebSocket = () => {
+  socket.value = new WebSocket("ws://localhost:8081/ws");
+
+  socket.value.onopen = () => {
+    messages.value += "Connected to WebSocket server\n";
+  };
+
+  socket.value.onmessage = (event) => {
+    messages.value += "Received: " + event.data + "\n";
+  };
+
+  socket.value.onclose = () => {
+    messages.value += "Disconnected from WebSocket server\n";
+  };
+};
+initializeWebSocket();
+
+const sendMessage = () => {
+  console.log("test");
+  if (socket.value && socket.value.readyState === WebSocket.OPEN) {
+    socket.value.send(message.value);
+    message.value = "";
+  } else {
+    messages.value += "WebSocket connection is not open\n";
+  }
+  console.log(message);
+};
+
+onBeforeUnmount(() => {
+  if (socket.value) {
+    socket.value.close();
+  }
+});
+</script>
 <template>
   <div
     class="cursor-pointer text-lg flex space-x-2 hover:bg-white/50 hover:text-teal-50 p-1 rounded-lg"
@@ -54,6 +95,20 @@
     </div>
   </div>
   <!-- <DataTable /> -->
+  <br />
+  <div class="space-x-2">
+    <input
+      type="text"
+      v-model="message"
+      placeholder="Enter message "
+      class="border-blue-50 rounded-md"
+    />
+    <pre>{{ messages }}</pre>
+
+    <div>
+      <button class="rounded-md bg-green-400" @click="sendMessage">Send</button>
+    </div>
+  </div>
 </template>
 <style>
 body {

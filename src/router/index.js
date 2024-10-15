@@ -3,6 +3,7 @@ import Nav from "@/views/Nav.vue";
 import Tasktwo from "@/views/Tasktwo.vue";
 import Taskone from "@/views/Taskone.vue";
 import Sidebar from "@/views/Sidebar.vue";
+import Navbar from "@/views/Navbar.vue";
 
 const routes = [
   {
@@ -12,6 +13,7 @@ const routes = [
       { path: "/", name: "taskone", component: Taskone },
       { path: "/tasktwo", name: "tasktwo", component: Tasktwo },
       { path: "/sidebar", name: "sidebar", component: Sidebar },
+      { path: "/navbar", name: "navbar", component: Navbar },
     ],
   },
 

@@ -78,6 +78,14 @@ console.log(solutions(6));
       sidebar
     </RouterLink>
   </div>
+  <div
+    class="cursor-pointer text-lg flex space-x-2 hover:bg-white/50 hover:text-teal-50 p-1 rounded-lg"
+  >
+    <RouterLink to="/navbar" class="text-teal-700 rounded-md">
+      <!-- <TheButton text="Click TaskTwo" button-type="button" /> -->
+      Navbar
+    </RouterLink>
+  </div>
   <PageLoader v-if="pending" />
   <div v-else>
     <div class="max-w-7xl mx-auto bg-gray-100">
